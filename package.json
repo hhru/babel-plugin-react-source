@@ -1,6 +1,6 @@
 {
     "name": "@hh.ru/babel-plugin-react-source",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "lib/index.js",
     "devDependencies": {
         "@babel/cli": "7.7.7",
@@ -14,9 +14,9 @@
         "eslint-plugin-prettier": "3.1.2",
         "eslint-plugin-react": "7.17.0",
         "jest": "^25.2.7",
+        "mocha": "^7.1.1",
         "prettier": "1.19.1"
     },
-    "dependencies": {},
     "license": "MIT",
     "private": false,
     "repository": {
