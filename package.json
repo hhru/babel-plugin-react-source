@@ -1,6 +1,6 @@
 {
     "name": "@hh.ru/babel-plugin-react-source",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "main": "lib/index.js",
     "devDependencies": {
         "@babel/cli": "7.7.7",
