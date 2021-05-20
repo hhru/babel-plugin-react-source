@@ -3,7 +3,7 @@
     // https://github.com/hhru/eslint-config-hh
     "extends": ["@hh.ru/eslint-config", "prettier", "prettier/standard"],
     "plugins": ["prettier"],
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
