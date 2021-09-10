@@ -29,7 +29,8 @@
         "clean": "rm -rf lib",
         "build": "babel src -d lib",
         "test": "mocha --require @babel/register",
-        "prepublish": "yarn clean && yarn build"
+        "prepublish": "yarn clean && yarn build",
+        "release": "npm publish --access=public"
     },
     "resolutions": {
         "kind-of": "6.0.3"
