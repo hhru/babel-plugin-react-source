@@ -1,0 +1,13 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: babel-plugin-react-source
+  annotations:
+    github.com/project-slug: hhru/babel-plugin-react-source
+  tags:
+    - backend
+    - js
+spec:
+  type: library
+  lifecycle: production
