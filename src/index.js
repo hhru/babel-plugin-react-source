@@ -4,13 +4,14 @@ const transform = ({ types }) => ({
     name: '@hh.ru/babel-plugin-react-source',
     visitor: {
         Program(path, state) {
-            const blokoImports = new Set();
+            const libraries = state.opts.libraries ?? ['bloko', 'magritte'];
+            const librariesImports = new Set();
 
             path.traverse({
                 ImportDeclaration(path) {
-                    if (path.node.source.value.includes('bloko')) {
+                    if (libraries.some((library) => path.node.source.value.includes(library))) {
                         path.node.specifiers.forEach((specifier) => {
-                            blokoImports.add(specifier.local.name);
+                            librariesImports.add(specifier.local.name);
                         });
                     }
                 },
@@ -22,7 +23,7 @@ const transform = ({ types }) => ({
                     if (identifier.name === undefined) {
                         return;
                     }
-                    if (identifier.name === identifier.name.toLowerCase() || blokoImports.has(identifier.name)) {
+                    if (identifier.name === identifier.name.toLowerCase() || librariesImports.has(identifier.name)) {
                         const source = `${relative(state.cwd, state.filename)}:${path.node.loc.start.line}`;
                         const name = types.JSXIdentifier('source');
                         const value = types.StringLiteral(source);
