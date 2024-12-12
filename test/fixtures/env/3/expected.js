@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var Component3 = function Component3() {
   var content = _react["default"].createElement("div", {
-    source: "test/fixtures/env/3/input.js:4"
+    "data-source": "test/fixtures/env/3/input.js:4"
   });
 
   return content;

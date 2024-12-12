@@ -23,6 +23,10 @@ const transformFile = (filename, isEnvPreset) =>
 
 describe('@hh.ru/babel-plugin-react-source adds source line in react elements with env presets', () => {
     fs.readdirSync(fixturesDirEnv).forEach(function(fixture) {
+        if (!fs.lstatSync(path.join(fixturesDirEnv, fixture)).isDirectory()) {
+            return;
+        }
+
         const actual = transformFile(path.join(fixturesDirEnv, fixture, 'input.js'), true);
         const expected = fs.readFileSync(path.join(fixturesDirEnv, fixture, 'expected.js'), 'utf8');
         it(path.basename(fixture), function () {
@@ -33,6 +37,9 @@ describe('@hh.ru/babel-plugin-react-source adds source line in react elements wi
 
 describe('@hh.ru/babel-plugin-react-source adds source line in react elements without env presets', () => {
     fs.readdirSync(fixturesDirWithoutEnv).forEach(function(fixture) {
+        if (!fs.lstatSync(path.join(fixturesDirEnv, fixture)).isDirectory()) {
+            return;
+        }
         const actual = transformFile(path.join(fixturesDirWithoutEnv, fixture, 'input.js'), false);
         const expected = fs.readFileSync(path.join(fixturesDirWithoutEnv, fixture, 'expected.js'), 'utf8');
         it(path.basename(fixture), function () {

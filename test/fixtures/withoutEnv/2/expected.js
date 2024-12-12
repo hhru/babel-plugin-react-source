@@ -4,14 +4,14 @@ const Component1 = ({
   content
 }) => {
   return React.createElement("div", {
-    source: "test/fixtures/withoutEnv/2/input.js:4"
+    "data-source": "test/fixtures/withoutEnv/2/input.js:4"
   }, content);
 };
 
 const Component2 = () => {
   return React.createElement(Component1, {
     content: React.createElement("span", {
-      source: "test/fixtures/withoutEnv/2/input.js:8"
+      "data-source": "test/fixtures/withoutEnv/2/input.js:8"
     })
   });
 };
