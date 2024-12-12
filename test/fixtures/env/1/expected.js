@@ -12,7 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var Component1 = function Component1() {
   return _react["default"].createElement("button", {
     type: "button",
-    source: "test/fixtures/env/1/input.js:4"
+    "data-source": "test/fixtures/env/1/input.js:4"
   }, "text");
 };
 

@@ -10,5 +10,6 @@
         "ecmaFeatures": {
             "modules": true
         }
-    }
+    },
+    "ignorePatterns": ["test/"]
 }
